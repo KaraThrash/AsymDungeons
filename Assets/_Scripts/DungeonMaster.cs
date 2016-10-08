@@ -12,7 +12,7 @@ public class DungeonMaster : Photon.MonoBehaviour
     public GameObject monsterObj;
     public bool isControllable;
 
-    
+    public GameObject dmCamera;
     public GameObject cameraHolder;
     public GameObject player;
     public GameObject wayPoint;
@@ -29,6 +29,7 @@ public class DungeonMaster : Photon.MonoBehaviour
     {
         canvasObj = GameObject.Find("Canvas");
         dmUI = canvasObj.transform.Find("DmUI").gameObject;
+        dmCamera = GameObject.Find("DMCamera");
         if (isControllable == true)
         {
             dmPowerManager = GameObject.Find("DMPowerManager");
@@ -47,7 +48,7 @@ public class DungeonMaster : Photon.MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Ray ray = dmCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))
                 {
@@ -56,7 +57,7 @@ public class DungeonMaster : Photon.MonoBehaviour
 
                         //wayPoint.transform.position = hit.point;
 
-                        SpawnEnemy(monsterName, new Vector3(hit.point.x * 10, hit.point.y, hit.point.z * 10));
+                        SpawnEnemy(monsterName, new Vector3(hit.point.x * 10, hit.point.y - 10, hit.point.z * 10));
                     }
 
                 }
