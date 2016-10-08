@@ -3,7 +3,11 @@ using System.Collections;
 
 public class DungeonMaster : Photon.MonoBehaviour
 {
+    public bool monsterSelected;
     public string monsterName;
+    public string trapName;
+
+
     public int playerCount;
     public GameObject monsterObj;
     public bool isControllable;
@@ -12,7 +16,7 @@ public class DungeonMaster : Photon.MonoBehaviour
     public GameObject cameraHolder;
     public GameObject player;
     public GameObject wayPoint;
-   
+    public GameObject dmUI;
 
     public float delay;
     bool one_click = false;
@@ -20,10 +24,13 @@ public class DungeonMaster : Photon.MonoBehaviour
     public float time_for_double_click;
 
     // Use this for initialization
-    void Start() {
-
+    void Start()
+    {
+        if (isControllable == true)
+        {
+            //dmUI.active = true;
+        }
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -35,45 +42,21 @@ public class DungeonMaster : Photon.MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                if (!one_click)
-                { // first click no previous clicks
-                    one_click = true;
-
-                    time_for_double_click = Time.time; // save the current time
-                                                       // do one click things;
-                }
-                else
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
                 {
-
-                    one_click = false; // found a double click, now reset
-                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    RaycastHit hit;
-                    if (Physics.Raycast(ray, out hit))
+                    if (hit.collider.tag == "Ground")
                     {
-                        if (hit.collider.tag == "Ground")
-                        {
 
-                            //wayPoint.transform.position = hit.point;
+                        //wayPoint.transform.position = hit.point;
 
-                            SpawnEnemy(monsterName, hit.point);
-                        }
-
+                        SpawnEnemy(monsterName, hit.point);
                     }
-                    if (one_click)
-                    {
-                        // if the time now is delay seconds more than when the first click started. 
-                        if ((Time.time - time_for_double_click) > delay)
-                        {
 
-                            //basically if thats true its been too long and we want to reset so the next click is simply a single click and not a double click.
-
-                            one_click = false;
-
-                        }
-
-                    }
                 }
             }
+
         }
     }
 
