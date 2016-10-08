@@ -17,7 +17,8 @@ public class DungeonMaster : Photon.MonoBehaviour
     public GameObject player;
     public GameObject wayPoint;
     public GameObject dmUI;
-
+    public GameObject canvasObj;
+    public GameObject dmPowerManager;
     public float delay;
     bool one_click = false;
     bool timer_running;
@@ -26,9 +27,13 @@ public class DungeonMaster : Photon.MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        canvasObj = GameObject.Find("Canvas");
+        dmUI = canvasObj.transform.Find("DmUI").gameObject;
         if (isControllable == true)
         {
-            //dmUI.active = true;
+            dmPowerManager = GameObject.Find("DMPowerManager");
+            dmPowerManager.GetComponent<DMPowerManager>().dm = this.gameObject;
+            dmUI.active = true;
         }
     }
     // Update is called once per frame
@@ -51,7 +56,7 @@ public class DungeonMaster : Photon.MonoBehaviour
 
                         //wayPoint.transform.position = hit.point;
 
-                        SpawnEnemy(monsterName, hit.point);
+                        SpawnEnemy(monsterName, new Vector3(hit.point.x * 10, hit.point.y, hit.point.z * 10));
                     }
 
                 }
