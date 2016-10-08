@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsymDungeons.CSharp.Plugins", "AsymDungeons.CSharp.Plugins.csproj", "{70AA1E9D-8C9D-B16B-B4D0-1D31EFF97DF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsymDungeons.CSharp", "AsymDungeons.CSharp.csproj", "{B9A4BF63-80D5-B3AA-1B45-91B5F630EDCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsymDungeons.CSharp.Editor", "AsymDungeons.CSharp.Editor.csproj", "{3A77536D-75C3-64C0-9C34-80997FF009C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70AA1E9D-8C9D-B16B-B4D0-1D31EFF97DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70AA1E9D-8C9D-B16B-B4D0-1D31EFF97DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70AA1E9D-8C9D-B16B-B4D0-1D31EFF97DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70AA1E9D-8C9D-B16B-B4D0-1D31EFF97DF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A4BF63-80D5-B3AA-1B45-91B5F630EDCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A4BF63-80D5-B3AA-1B45-91B5F630EDCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A4BF63-80D5-B3AA-1B45-91B5F630EDCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A4BF63-80D5-B3AA-1B45-91B5F630EDCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A77536D-75C3-64C0-9C34-80997FF009C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A77536D-75C3-64C0-9C34-80997FF009C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A77536D-75C3-64C0-9C34-80997FF009C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A77536D-75C3-64C0-9C34-80997FF009C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
