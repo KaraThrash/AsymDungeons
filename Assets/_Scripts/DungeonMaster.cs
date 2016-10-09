@@ -56,8 +56,8 @@ public class DungeonMaster : Photon.MonoBehaviour
                     {
 
                         //wayPoint.transform.position = hit.point;
-
-                        SpawnEnemy(monsterName, new Vector3(hit.point.x * 10, hit.point.y - 10, hit.point.z * 10));
+                        SpawnEnemy(monsterName, hit.point);
+                       // SpawnEnemy(monsterName, new Vector3(hit.point.x * 10, hit.point.y - 10, hit.point.z * 10));
                     }
 
                 }
