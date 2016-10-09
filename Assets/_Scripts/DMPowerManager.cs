@@ -25,12 +25,12 @@ public class DMPowerManager : MonoBehaviour {
         dm.GetComponent<DungeonMaster>().monsterName = currentTrap;
     }
     public void SelectBruteMonster()
-    { currentMonster = "MonsterBruteSize";
+    { currentMonster = "MonsterBrute";
         dm.GetComponent<DungeonMaster>().monsterSelected = true;
         dm.GetComponent<DungeonMaster>().monsterName = currentMonster;
     }
     public void SelectGhostMonster()
-    {currentMonster = "MonsterGhostSize";
+    {currentMonster = "MonsterGhost";
         dm.GetComponent<DungeonMaster>().monsterSelected = true;
         dm.GetComponent<DungeonMaster>().monsterName = currentMonster;
     }
